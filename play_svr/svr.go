@@ -11,22 +11,16 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func templateHandler(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.New("myTemplate").Parse(HTML_TEMPLATE))
 	data := map[string]string{"subst": "injectedval"}
-	t.Execute(w, data)
+    // the template must have {{define "main"}} in it for this to work
+	templates.ExecuteTemplate(w, "main", data)
 }
 
 func staticHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, r.URL.Path[1:])
 }
 
-const HTML_TEMPLATE = `
-    <html>
-        <body>
-            this is the template param with <b>{{.subst}}</b>
-        </body>
-    </html>
-`
+var templates = template.Must(template.ParseGlob(`/tmp/templates/*`))
 
 func main() {
 	fmt.Printf("hello world")
