@@ -14,22 +14,20 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 
 func templateHandler(w http.ResponseWriter, r *http.Request) {
 	data := map[string]string{"subst": "injectedval"}
-	// the template must have {{define "main"}} in it for this to work
-	htmlTemplates.ExecuteTemplate(w, "main", data)
+	htmlTemplate.Execute(w, data)
 }
 
 func staticHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, r.URL.Path[1:])
 }
 
-var templateDir string
-var htmlTemplates *template.Template
+var templateFile string
+var htmlTemplate *template.Template
 
 func main() {
     curWd, _ := os.Getwd()
-    templateDir = path.Join(curWd, "templates")
-    fmt.Printf("Using html from <%v\n>", templateDir)
-    htmlTemplates = template.Must(template.ParseGlob(templateDir))
+    templateFile = path.Join(curWd, "templates", "foo.html")
+    htmlTemplate = template.Must(template.ParseFiles(templateFile))
 
 	http.HandleFunc("/foo", fooHandler)
 	http.HandleFunc("/template", templateHandler)
