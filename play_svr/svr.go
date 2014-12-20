@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+    "os"
+    "path"
 )
 
 func fooHandler(w http.ResponseWriter, r *http.Request) {
@@ -12,7 +14,7 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 
 func templateHandler(w http.ResponseWriter, r *http.Request) {
 	data := map[string]string{"subst": "injectedval"}
-    // the template must have {{define "main"}} in it for this to work
+	// the template must have {{define "main"}} in it for this to work
 	templates.ExecuteTemplate(w, "main", data)
 }
 
@@ -23,7 +25,10 @@ func staticHandler(w http.ResponseWriter, r *http.Request) {
 var templates = template.Must(template.ParseGlob(`/tmp/templates/*`))
 
 func main() {
-	fmt.Printf("hello world")
+    curWd, _ := os.Getwd()
+    htmlDir := path.Join(curWd, "html")
+    fmt.Printf("Using html from <%v>", htmlDir)
+
 	http.HandleFunc("/foo", fooHandler)
 	http.HandleFunc("/template", templateHandler)
 	http.HandleFunc("/static/", staticHandler)
