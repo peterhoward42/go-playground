@@ -19,7 +19,7 @@ o  Try gin
         *  Refactor the server bring up code to have shareable set up router func
         *  Write test that uses it
     o  Gradually add tests to try things
-        o  Make list
+        o  Is there a test setup?
     o  Does this serve https or http or both?
     o  Did I get auth out of the box?
     o  How hard to add JWT auth?
@@ -35,3 +35,8 @@ o  Go back to Kafka-inspired experiments
     o  Deploying to GCP as two micro services with Kubernetes
     o  Adding JWT auth
     o  Read up how to perf test such a thing
+
+
+---------------------------------------------------------------------------
+rewrap = Alt-Q
+---------------------------------------------------------------------------
