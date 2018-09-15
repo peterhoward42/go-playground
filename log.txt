@@ -2,16 +2,27 @@
 
 *  Quick recap of godoc
 *  Setup ssh access to github
-o  Quick recap / explore of IDEs
+*  Quick recap / explore of IDEs
     *  Try VS Code
-    o  Informal play around getting stuff to compile and build and run tests
-    o  Do auto rename for play_testify package to get rid of warning
-    o  vi editor bindings
-    o  debugging
-    o  github integration
-
-o  Quick recap of debugging - look at built in support, Delve, and use in IDE
-o  Try a web framework
+    *  Informal play around getting stuff to compile and build and run tests
+    *  Do auto rename for play_testify package to get rid of warning
+    *  vi editor bindings
+    *  debugging
+    *  github integration
+*  Quick recap of debugging - look at built in support, Delve, and use in IDE
+o  Try gin
+    *  Set up a hellow world in a new package in go-playground
+    *  Provide a test module
+        *  What does vscode generator do?
+            *  Looks useful for library code - but not so sure for server
+               tests; look into the tool
+        *  Refactor the server bring up code to have shareable set up router func
+        *  Write test that uses it
+    o  Gradually add tests to try things
+        o  Make list
+    o  Does this serve https or http or both?
+    o  Did I get auth out of the box?
+    o  How hard to add JWT auth?
 o  Get more at ease with channels by trying out some design patterns therewith
 o  Study and try out 1.11 modules experiment
 o  Study support for debugging
