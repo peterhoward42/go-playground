@@ -1,7 +1,16 @@
 # Log
 
-o  Quick recap of godoc
+*  Quick recap of godoc
+*  Setup ssh access to github
 o  Quick recap / explore of IDEs
+    *  Try VS Code
+    o  Informal play around getting stuff to compile and build and run tests
+    o  Do auto rename for play_testify package to get rid of warning
+    o  vi editor bindings
+    o  debugging
+    o  github integration
+
+o  Quick recap of debugging - look at built in support, Delve, and use in IDE
 o  Try a web framework
 o  Get more at ease with channels by trying out some design patterns therewith
 o  Study and try out 1.11 modules experiment
