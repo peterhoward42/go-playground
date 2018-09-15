@@ -7,7 +7,8 @@ import (
 )
 
 
-// The function CountSubstrings is the code that we are going to write
+
+//The function CountSubstrings is the code that we are going to write
 // a test for. It depends on a message getter object passed in - which we
 // are going to provide in the test using a testify mock object.
 func CountSubstrings(getter MessageGetter) int {

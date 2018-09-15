@@ -1,0 +1,17 @@
+# Log
+
+o  Quick recap of godoc
+o  Quick recap / explore of IDEs
+o  Try a web framework
+o  Get more at ease with channels by trying out some design patterns therewith
+o  Study and try out 1.11 modules experiment
+o  Study support for debugging
+o  Study trace
+o  Study prof (profile?)
+o  Study go support for webassembly
+o  Go back to Kafka-inspired experiments
+    o  Using rpc
+    o  Using Redis as backing store
+    o  Deploying to GCP as two micro services with Kubernetes
+    o  Adding JWT auth
+    o  Read up how to perf test such a thing

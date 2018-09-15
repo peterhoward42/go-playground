@@ -7,6 +7,8 @@ import (
 )
 
 
+// The TestCountsCorrectly function is a unit test that illustrates the use of
+// mock.Mock.
 func TestCountsCorrectly(t *testing.T) {
 
     // Prepare a mock object that satisfies the MessageGetter interface.
@@ -35,11 +37,15 @@ func TestCountsCorrectly(t *testing.T) {
 }
 
 
+// The MockMessageGetter struct is our mock object - a trivial wrapper round a
+// mock.Mock.
 type MockMessageGetter struct{
   mock.Mock
 }
 
 
+// The NextMessage method is the method for MockMessageGetter, that makes it 
+// satisfy the MessageGetter interface.
 func (m *MockMessageGetter) NextMessage() (string) {
     args := m.Called()
     return args.String(0)
